@@ -1,4 +1,4 @@
-![image](https://github.com/rashmi1sec/3-tier-Application-IA-2/assets/167959995/b4d592a7-1a0d-48a4-ad03-e00958a24396)# 3-tier-Application-IA-2
+# 3-tier-Application-IA-2
 
 This repository contains the code for a three-tier application built using Docker, with a multi-container setup. The application includes a frontend developed with React, a backend powered by Spring Boot, and a MongoDB database.
 
@@ -59,15 +59,6 @@ docker ps
 ![image](https://github.com/rashmi1sec/3-tier-Application-IA-2/assets/167959995/88c9dd72-a546-4013-aacf-7c72f9c68f3e)
 
 
-```Check Image
-docker images
-```
-
-
-
-
-
-
 **Backend(SpringBoot):**
 ```.yaml file
 # Backend Connectivity with Mongo Docker Container
@@ -79,20 +70,14 @@ spring:
       port: 27017
 ```
 
-```Docker file
-# SprignBoot Docker File
-FROM openjdk:21
-ADD target/hotelAPI.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
-```
-
-
 ```Modify pom.xml file
 # Give FInal Name
 <finalName>hotelAPI</finalName>
 ```
 
 Pick maven Jar and applicatoin will be install as mongodb propeties with Mongodb container
+
+
 
 ![image](https://github.com/rashmi1sec/3-tier-Application-IA-2/assets/167959995/451b800f-6659-43f7-b654-043c4e176f6b)
 
@@ -120,6 +105,12 @@ COPY . .
 EXPOSE 3000
 
 CMD ["npm", "start"]
+```
+**Backend (Springboot):**
+```Dockerfile
+FROM openjdk:21
+ADD target/hotelAPI.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
 ```
 
 
